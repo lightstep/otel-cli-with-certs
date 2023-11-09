@@ -6,6 +6,12 @@ This image allows you to quickly send test spans in a Kubernetes cluster or Dock
 
 ### Usage with ServiceNow Cloud Observability on Kubernetes
 
+Replace `...` with the [access token](https://docs.lightstep.com/docs/create-and-manage-access-tokens#create-an-access-token) for your Cloud Observability project.
+
+`otel-cli` has no output if successful. A span will appear in your project after a few minutes. 
+
+Check logs (`kubectl logs otel-cli`) for errors.
+
 ```
 kubectl run otel-cli \
     --image=ghcr.io/lightstep/otel-cli-with-certs:latest \
@@ -15,6 +21,8 @@ kubectl run otel-cli \
 ```
 
 ### Usage with ServiceNow Cloud Observability with Docker
+
+Replace `...` with the access token for your Cloud Observability project.
 
 ```
 docker run --name otel-cli-with-certs --rm \
